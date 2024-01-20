@@ -1,4 +1,4 @@
-// - this will be my simple stats module 
+// - this will be my simple stats module
 
 // - Beginner (Daily Use):
 /*
@@ -13,21 +13,20 @@
 
 */
 
+mod advanced;
 mod beginner;
 mod inter;
-mod advanced;
 
-use beginner as stats;
+use beginner::SimpleStatistics;
 
-fn main(){
-    let float_vector = vec![1.0, 2.0, 3.0];
-    let int_array = ['d','g'];
+fn main() {
+    let stats = SimpleStatistics::Mean;
+    let data = [6.5, 1.1, 2.1, 3.5];
+    let result = stats.calculate(&data);
+    println!("Mean: {}", result);
 
-
-
-    // let d=stats::Median(&float_vector);
-    // let s=stats::Median(&int_array);
-    // println!("{:?} and {}",{d},{s})
-
-    
+    let stats = SimpleStatistics::Median;
+    let data = vec![1, 2, 3, 4, 5];
+    let result = stats.calculate(&data);
+    println!("Median: {}", result);
 }
